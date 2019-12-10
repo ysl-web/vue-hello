@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+//遗留问题：如何在根js文件中设置为全局可使用的包
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,9 +26,9 @@ app.use('/users', usersRouter);
 
 //app.use(cors());
 app.use(cors({
-  origin:['http://localhost:8088'],  //指定接收的地址
-  methods:['GET','POST'],  //指定接收的请求类型
-  alloweHeaders:['Content-Type','Authorization']  //指定header
+  origin: ['http://localhost:8080'],  //指定接收的地址
+  methods: ['GET', 'POST'],  //指定接收的请求类型
+  alloweHeaders: ['Content-Type', 'Authorization']  //指定header
 }))
 //cors包：解决跨域 使localhost：8080能访问到
 
