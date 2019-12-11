@@ -21,7 +21,6 @@ router.post('/test', cors(corsOptions), function(req, res, next){
         message: '数据库请求失败！'
       });
     }
-    console.log(data);
     res.json(data);
   })
 })
