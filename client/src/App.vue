@@ -1,10 +1,17 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div id="talk">
+    <van-row>
+      <van-col span="4">logo</van-col>
+      <van-col span="10" offset="2">
+        
+      </van-col>
+      <van-col span="6" offset="2"></van-col>
+    </van-row>
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view/> -->
   </div>
 </template>
 
