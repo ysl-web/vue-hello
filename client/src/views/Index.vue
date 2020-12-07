@@ -12,13 +12,15 @@
       </div>
       <aside class="side">侧边栏</aside>
     </el-row>
+    <home></home>
   </div>
 </template>
 
 <script>
+import Home from './Home.vue';
 export default {
   name: "index",
-  components: {}
+  components: {Home}
 };
 </script>
 

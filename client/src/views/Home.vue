@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <button @click="hello">测试按钮</button>
+    <!-- <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <button @click="hello">get请求</button>
     <Check />
 
     <Prop v-bind:txt="txt" />
@@ -29,7 +29,9 @@ export default {
   },
   methods:{
     hello: function(){
-      this.$axios.post('/test').then(res => {
+      this.$axios.get('/getTest', {params: {
+        id: 1
+      }}).then(res => {
         console.log(res.data);
       })
     }
