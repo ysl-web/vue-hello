@@ -12,14 +12,12 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import Check from '@/components/Check.vue'
 import Prop from '@/components/Prop.vue'
 
 export default {
   name: 'home',
   components: {
     HelloWorld,
-    Check,
     Prop
   },
   data(){

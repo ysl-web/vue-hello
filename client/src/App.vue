@@ -9,7 +9,7 @@
         </el-col>
         <el-col :sm="9" :offset="1" class="nav">
           <router-link to="/">首页</router-link>
-          <router-link to="/hot">沸点</router-link>
+          <router-link to="/hot">表格</router-link>
           <router-link to="/topic">话题</router-link>
           <router-link to="/active">活动</router-link>
         </el-col>

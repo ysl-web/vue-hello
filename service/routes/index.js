@@ -16,9 +16,26 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/getTest', function(req, res, next) {
-    console.log(req.query.id);
     let { id } = req.query;
-    let sql = `select * from websites where id='` + id + `'`;
+    let sql;
+    if (id) {
+        sql = `select * from websites where id='` + id + `'`;
+    } else {
+        sql = `select * from websites`;
+    };
+    db.query(sql, (err, data) => {
+        if (err) {
+            return res.json({
+                message: '数据库请求失败！'
+            });
+        }
+        res.json(data);
+    })
+});
+
+router.post('/upData', function(req, res, next) {
+    let { name, alexa, url, country, id } = req.body;
+    let sql = `update websites set name='` + name + `',alexa='` + alexa + `',url='` + url + `',country='` + country + `' where id='` + id + `'`;
     db.query(sql, (err, data) => {
         if (err) {
             return res.json({
@@ -30,7 +47,6 @@ router.get('/getTest', function(req, res, next) {
 });
 
 router.post('/test', function(req, res, next) {
-    //res.json({name: '杨石林', id: '123456'});
     let sql = `select * from websites where name='` + req.name + `'`;
     console.log(req.body);
     db.query('select * from websites', (err, data) => {
@@ -41,6 +57,6 @@ router.post('/test', function(req, res, next) {
         }
         res.json(data);
     })
-})
+});
 
 module.exports = router;
